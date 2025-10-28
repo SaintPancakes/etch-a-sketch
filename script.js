@@ -25,7 +25,7 @@ for (let i = 0; i < 16; i++) {
 gridContainer.appendChild(fragment);
 
 const button = document.createElement('button');
-button.addEventListener('click', () => {
+    button.addEventListener('click', () => {
         const answer = prompt ("Number of squares per side for the new grid?");
     
         removeElementsbyClass('box');
@@ -34,20 +34,18 @@ button.addEventListener('click', () => {
 
         for (let i = 0; i < answer * answer; i++) {
             const boxClone = sixteenth.cloneNode(true);
+                boxClone.style.width = 750/answer + "px";
+                boxClone.style.height = 750/answer + "px";
+                boxClone.style.border = "solid 1px #000000";
             boxClone.addEventListener('mouseenter', () => {
                 boxClone.style.backgroundColor = 'red';
         });
 
-    fragment.appendChild(boxClone);
-}
+        fragment.appendChild(boxClone);
+        }
     gridContainer.appendChild(fragment);
 
-    const boxes = document.getElementsByClassName('box');
-        boxes.style.width = 750/answer;
-        boxes.style.height = 750/answer;
-        boxes.style.border = "solid 1px #000000";
-
-})
+    })
 
 document.body.appendChild(button)
 
