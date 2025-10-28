@@ -4,6 +4,13 @@ const sixteenth = document.createElement('div');
 sixteenth.classList.add('box');
 const fragment = new DocumentFragment();
 
+function removeElementsbyClass(box) {
+    let boxesToRemove = document.getElementsByClassName(box);
+    while(boxesToRemove.length > 0) {
+        boxesToRemove[0].parentNode.removeChild(boxesToRemove[0]);
+    }
+}    
+
 
 for (let i = 0; i < 16; i++) {
     const boxClone = sixteenth.cloneNode(true);
@@ -21,12 +28,11 @@ const button = document.createElement('button');
 button.addEventListener('click', () => {
         const answer = prompt ("Number of squares per side for the new grid?");
     
-        const existingBoxes = document.querySelectorAll('.box');
-        existingBoxes.remove()
-
+        removeElementsbyClass('box');
+        
         const fragment = new DocumentFragment();
 
-        for (let i = 0; i < $answer * $answer; i++) {
+        for (let i = 0; i < answer * answer; i++) {
             const boxClone = sixteenth.cloneNode(true);
             boxClone.addEventListener('mouseenter', () => {
                 boxClone.style.backgroundColor = 'red';
@@ -37,9 +43,9 @@ button.addEventListener('click', () => {
     gridContainer.appendChild(fragment);
 
     const boxes = document.getElementsByClassName('box');
-        box.style.width = 750/$answer;
-        box.style.height = 750/$answer;
-        box.style.border = "solid 1px #000000";
+        boxes.style.width = 750/answer;
+        boxes.style.height = 750/answer;
+        boxes.style.border = "solid 1px #000000";
 
 })
 
