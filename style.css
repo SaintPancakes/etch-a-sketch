@@ -17,3 +17,9 @@
     border: 1px black;
 }
 
+/*.new-box {
+    display:flex;
+    flex-wrap: wrap;
+    border-style: solid 1px;
+    border-color: black;
+}

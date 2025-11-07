@@ -11,7 +11,7 @@ function removeElementsbyClass(box) {
     }
 }    
 
-
+//creates 16 boxes for default grid
 for (let i = 0; i < 16; i++) {
     const boxClone = sixteenth.cloneNode(true);
 
@@ -31,11 +31,18 @@ const button = document.createElement('button');
         removeElementsbyClass('box');
         
         const fragment = new DocumentFragment();
-
+        //generate new boxes according to user input
         for (let i = 0; i < answer * answer; i++) {
             const boxClone = sixteenth.cloneNode(true);
-                boxClone.style.width = 750/answer + "px";
-                boxClone.style.height = 750/answer + "px";
+                boxClone.classList.add('new-box');
+                //flexbasis forces the default value of the box clones to conform to the size of the grid
+                let divBoxCalc = (100/answer);
+                    boxClone.style.flex = "0 0 0"; //disabled growth and shrink, stopping box overflow
+                    boxClone.style.flexBasis = `${divBoxCalc}%`; //explicitly set box size to a percentage of the container
+                    boxClone.style.height = `${divBoxCalc}%`; //forces boxes to be square
+                    boxClone.style.boxSizing = "border-box"; //the size of the box includes the border, stopping overflow
+
+                
                 boxClone.style.border = "solid 1px #000000";
             boxClone.addEventListener('mouseenter', () => {
                 boxClone.style.backgroundColor = 'red';
