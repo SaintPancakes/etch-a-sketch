@@ -25,6 +25,7 @@ for (let i = 0; i < 16; i++) {
 gridContainer.appendChild(fragment);
 
 const button = document.createElement('button');
+button.textContent = "Generate New Grid";
     button.addEventListener('click', () => {
         const answer = prompt ("Number of squares per side for the new grid?");
     
