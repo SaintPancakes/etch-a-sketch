@@ -54,6 +54,6 @@ const button = document.createElement('button');
 
     })
 
-document.querySelector('.meta-container').appendChild(button);
+document.querySelector('.sketch-div').appendChild(button);
 
 

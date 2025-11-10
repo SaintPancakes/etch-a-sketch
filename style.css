@@ -5,13 +5,24 @@
 }
   */
 
-.button {
+.meta-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 16px 0px;
-    padding: 8px 24px;
 }
+
+.title-div {
+    display:flex;
+    justify-content: center;
+    font-size: 46px;
+    padding: 16px;
+}
+
+.sketch-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 
 .container {
     width: 750px;
@@ -22,8 +33,17 @@
     flex-wrap: wrap;
     border: 1px solid black;
 }
+
 .box {
     width: 187.5px;
     height: 187.5px;
     border: 1px black;
+}
+
+
+.button {
+    display: flex;
+    margin: 16px 0px;
+    padding: 8px 24px;
+    
 }
