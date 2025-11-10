@@ -1,12 +1,23 @@
+/*body {
+  display: flex;
+  flex-direction: column;
+  margin: 0
+}
+  */
+
 .button {
-    justify-self: center;
-    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0px;
+    padding: 8px 24px;
 }
 
 .container {
     width: 750px;
     height: 750px;
     justify-self: center;
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     border: 1px solid black;
@@ -15,11 +26,4 @@
     width: 187.5px;
     height: 187.5px;
     border: 1px black;
-}
-
-/*.new-box {
-    display:flex;
-    flex-wrap: wrap;
-    border-style: solid 1px;
-    border-color: black;
 }
