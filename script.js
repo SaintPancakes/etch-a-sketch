@@ -2,6 +2,7 @@
 const gridContainer = document.querySelector('.container');
 const sixteenth = document.createElement('div');
 sixteenth.classList.add('box');
+sixteenth.style.backgroundColor = '#ECEAE4'
 const fragment = new DocumentFragment();
 
 function removeElementsbyClass(box) {
@@ -11,18 +12,31 @@ function removeElementsbyClass(box) {
     }
 }    
 
+function randomRGB() {
+    const choice = Math.floor(Math.random()*3)+1;
+
+    if (choice === 1) {
+        return ("red");
+    } else if (choice === 2) {
+        return ("green");
+    } else {
+        return ("blue")
+    }
+}
+
 //creates 16 boxes for default grid
 for (let i = 0; i < 16; i++) {
     const boxClone = sixteenth.cloneNode(true);
 
     boxClone.addEventListener('mouseenter', () => {
-        boxClone.style.backgroundColor = 'red';
+        const boxColor = randomRGB();
+        boxClone.style.backgroundColor = `${boxColor}`;
     });
-
     fragment.appendChild(boxClone);
 }
 
 gridContainer.appendChild(fragment);
+
 
 const button = document.createElement('button');
 button.textContent = "Generate New Grid";
@@ -46,7 +60,8 @@ button.textContent = "Generate New Grid";
                 
                 boxClone.style.border = "solid 1px #000000";
             boxClone.addEventListener('mouseenter', () => {
-                boxClone.style.backgroundColor = 'red';
+                const boxColor = randomRGB();
+                boxClone.style.backgroundColor = `${boxColor}`;
         });
 
         fragment.appendChild(boxClone);
