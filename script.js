@@ -41,8 +41,11 @@ gridContainer.appendChild(fragment);
 const button = document.createElement('button');
 button.textContent = "Generate New Grid";
     button.addEventListener('click', () => {
-        const answer = prompt ("Number of squares per side for the new grid?");
-    
+        const answer = prompt ("Choose the number of squares for each side of the grid. Answer must be between 1 and 100.");
+           if (isNaN(answer) || answer <1 || answer > 100){
+                alert ("Invalid answer, try again");
+                return;
+           }
         removeElementsbyClass('box');
         
         const fragment = new DocumentFragment();
