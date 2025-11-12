@@ -2,7 +2,7 @@
 const gridContainer = document.querySelector('.container');
 const sixteenth = document.createElement('div');
 sixteenth.classList.add('box');
-sixteenth.style.backgroundColor = '#ECEAE4'
+sixteenth.style.backgroundColor = '#f6f5f2ff'
 const fragment = new DocumentFragment();
 
 function removeElementsbyClass(box) {
@@ -12,6 +12,7 @@ function removeElementsbyClass(box) {
     }
 }    
 
+//when a box is highlighted, it will be red, green or blue
 function randomRGB() {
     const choice = Math.floor(Math.random()*3)+1;
 
@@ -39,7 +40,7 @@ gridContainer.appendChild(fragment);
 
 
 const button = document.createElement('button');
-button.textContent = "Generate New Grid";
+button.textContent = "Change Grid Size";
     button.addEventListener('click', () => {
         const answer = prompt ("Choose the number of squares for each side of the grid. Answer must be between 1 and 100.");
            if (isNaN(answer) || answer <1 || answer > 100){
@@ -73,6 +74,6 @@ button.textContent = "Generate New Grid";
 
     })
 
-document.querySelector('.sketch-div').appendChild(button);
+document.querySelector('.title-div').appendChild(button);
 
 
