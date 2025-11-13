@@ -32,6 +32,9 @@ for (let i = 0; i < 16; i++) {
     boxClone.addEventListener('mouseenter', () => {
         const boxColor = randomRGB();
         boxClone.style.backgroundColor = `${boxColor}`;
+        let currentOpacity = parseFloat(boxClone.style.opacity);
+        let newOpacity = Math.min(currentOpacity + 0.1);
+        boxClone.style.opacity = newOpacity;
     });
     fragment.appendChild(boxClone);
 }
@@ -60,12 +63,16 @@ button.textContent = "Change Grid Size";
                     boxClone.style.flexBasis = `${divBoxCalc}%`; //explicitly set box size to a percentage of the container
                     boxClone.style.height = `${divBoxCalc}%`; //forces boxes to be square
                     boxClone.style.boxSizing = "border-box"; //the size of the box includes the border, stopping overflow
-
+                    boxClone.style.opacity = '0.1'
                 
                 boxClone.style.border = "solid 1px #000000";
             boxClone.addEventListener('mouseenter', () => {
                 const boxColor = randomRGB();
                 boxClone.style.backgroundColor = `${boxColor}`;
+                let currentOpacity = parseFloat(boxClone.style.opacity);
+                let newOpacity = Math.min(currentOpacity + 0.1);
+                boxClone.style.opacity = newOpacity;
+
         });
 
         fragment.appendChild(boxClone);
