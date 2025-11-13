@@ -33,7 +33,7 @@ for (let i = 0; i < 16; i++) {
         const boxColor = randomRGB();
         boxClone.style.backgroundColor = `${boxColor}`;
         let currentOpacity = parseFloat(boxClone.style.opacity);
-        let newOpacity = Math.min(currentOpacity + 0.1);
+        let newOpacity = Math.abs(currentOpacity + 0.1);
         boxClone.style.opacity = newOpacity;
     });
     fragment.appendChild(boxClone);
@@ -70,7 +70,7 @@ button.textContent = "Change Grid Size";
                 const boxColor = randomRGB();
                 boxClone.style.backgroundColor = `${boxColor}`;
                 let currentOpacity = parseFloat(boxClone.style.opacity);
-                let newOpacity = Math.min(currentOpacity + 0.1);
+                let newOpacity = Math.abs(currentOpacity + 0.1);
                 boxClone.style.opacity = newOpacity;
 
         });
